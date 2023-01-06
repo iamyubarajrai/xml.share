@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--Having empty complex type element
+        The usecase will be: 
+    -->
+    <!-- Defining element -->
+    <xsd:element name="firstname">
+        <xsd:complexType>
+            <!-- Defining information, 
+                Perticular attribute (rollnumber) 
+
+                <xsd:attribute></xsd:attribute>
+                OR
+                <xsd:attribute />
+
+                If type/datatype is not defined, it will take anytype by default.
+            -->
+            <xsd:attribute name="rollnumber" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

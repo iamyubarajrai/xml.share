@@ -1,0 +1,111 @@
+XML Summary:
+=========================
+
+Why is XML important?
+---------------------
+XML supports information exchange between computer systems such as websites, databases, and third-party applications. 
+Predefined rules make it easy to transmit data as XML files over any network 
+because the recipient can use those rules to read the data accurately and efficiently.
+
+
+=========================
+
+Topics to cover:
+---------------
+
+- XML (Extensible Markup Language)
+- XSL/XSLT (Extensible Stylesheet Language Transformations)
+- DTD (Document Type Definition) (Internal & External)
+- XSD (XML Schema Definition) (Simple & Complex)
+- XMLParser (DOM (Document Object Model), SAX (Simple API for XML))
+- XQuery (XML Query)
+
+
+=========================
+
+Terminologies:
+--------------
+
+#1 standalone (yes/no) (XML declaration attribute on the document)
+#2 XML Repeated (Multiple) element handling on DTD (with asterisk = *, i.e.: (#PCDATA)* )
+#3 XML Schema Indicators:   
+    Occurrence Indicators (maxOccurs, minOccurs)
+    Group Indicators (Group name, attributeGroup name)
+    Order Indicators (All, Choice, Sequence)
+#4 If a document follows the rules it is said to be Valid:
+    step:1)  Well formed   (Then only it is XML, otherwise it is Junk)
+    step:2) Valid        (After having well-formed XML document, we work on validation) 
+#5 Facets 
+    Restrictions are used to define acceptable values for XML elements or attributes. 
+    Restrictions on XML elements are called facets.
+#6 XPath 
+    (XPath uses "path like" syntax to identify and navigate nodes in an XML document)
+    (XPath contains over 200 built-in functions)
+    (XPath is a node/element navigator of the document followed by root element from DOM of the document)
+#7 XQuery
+    What is XQuery?
+        - XQuery is the language for querying XML data
+        - XQuery for XML is like SQL for databases
+        - XQuery is built on XPath expressions
+        - XQuery is supported by all major databases
+        - XQuery is a W3C Recommendation
+
+    XQuery can be used to:
+        - Extract information to use in a Web Service
+        - Generate summary reports
+        - Transform XML data to XHTML
+        - Search Web documents for relevant information
+#8 XQuery and XPath
+    XQuery 1.0 and XPath 2.0 share the same data model and support the same functions and operators. 
+    If you have already studied XPath you will have no problems with understanding XQuery.
+#9 IDE for XML is "XML Copy Editor"
+    For easy testing on well-formatness and validation with one click,
+    rather than using PHP for DTD and XSD validation check
+#10 Online XML Tools
+    *XMLViewer
+    i.e.: https://codebeautify.org/xmlviewer/
+    i.e.: https://codebeautify.org/jsonviewer
+
+    *XPathGenerator
+    i.e.: https://easycodeforall.com/generate-xpath.html
+    i.e.: https://xmltoolbox.appspot.com/xpath_generator.html 
+
+    *XSDValidator
+    i.e.: https://www.liquid-technologies.com/online-xsd-validator
+
+    
+=========================
+
+XSD Data Types:
+--------------
+- String
+- Date/Time
+- Numeric
+- Misc
+- Reference
+
+
+=========================
+
+XML (Web) Services:
+--------------
+#WSDL
+- WSDL stands for Web Services Description Language
+- WSDL is an XML-based language for describing Web services.
+
+#SOAP
+- SOAP stands for Simple Object Access Protocol (an API)
+- SOAP is an XML based protocol for accessing Web Services.
+
+#RDF
+- RDF stands for Resource Description Framework
+- RDF is a framework for describing resources on the web
+- RDF is written in XML
+
+#RSS
+- RSS stands for Really Simple Syndication
+- RSS allows you to syndicate your site content
+- RSS defines an easy way to share and view headlines and content
+- RSS files can be automatically updated
+- RSS allows personalized views for different sites
+- RSS is written in XML

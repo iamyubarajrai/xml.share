@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+    <!ELEMENT person (name+)>
+    <!ELEMENT name (#PCDATA)>
+]>
+<person>
+    <name>Yubaraj Rai</name>
+    <name>Yubaraj Rai</name>
+</person>

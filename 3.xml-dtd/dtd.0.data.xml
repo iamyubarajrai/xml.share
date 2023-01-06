@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Structure -->
+<person-a>
+    <name>Yubaraj Rai</name>
+    <email>yubaraj.name@gmail.com</email>
+    <telephone>+977 9852079777</telephone>
+</person-a>
+<!-- 
+Reciever Expectation:
+Data:   person
+        name
+        email
+        telephone
+___________________________
+While person root was okay, 
+which was expected by the reciever undestanding easily. 
+But, expecting person root by reciever, 
+here existing person-a root will generate unconditional error  
+
+To hande these kind of error, we use DTD (Document Type Definition/Declaration)
+DTD enables parsability of the document 
+where programmer can parse/change/convert the data structure 
+as they wants from any structure to own structure 
+
+DTD Types:
+- Internal DTD
+- External DTD
+________________________________
+DTD - XML Building Blocks:
+Seen from a DTD point of view, 
+all XML documents are made up by the following building blocks:
+- Elements 
+- Attribute
+- Entities
+- PCDATA    (Parsed Character Data - Parsable)
+- CDATA     (Character Data - Non Parsable)
+
+#Note1:
+PCDATA is text that WILL be parsed by a parser. 
+The text will be examined by the parser for entities and markup.
+
+Tags inside the text will be treated as markup and entities will be expanded.
+
+However, parsed character data should not contain any &, <, or > characters; 
+these need to be represented by the &amp; &lt; and &gt; entities, respectively.
+
+#Note2:
+CDATA is text that will NOT be parsed by a parser. 
+Tags inside the text will NOT be treated as markup and 
+entities will not be expanded.
+________________________________
+DTD Attributes:
+- 
+
+Note: DTD example on "dtd.1.data.xml" file 
+-->

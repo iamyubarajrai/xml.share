@@ -1,0 +1,128 @@
+<!-- #XSD:
+XSD = acronym of "XML Schema Definition (Language)"
+
+It enables more controls for XML with data type validation,
+Because, DTD has no more control for XML
+XML Schema file extension will be "*.xsd"
+
+DTD helps to form well formed XML Document,
+But, the XML still will have error chances,
+Where DTD has no control mechanism to check data type.
+So, to control data types also, XML Schema helps on this
+
+
+#What is well formed document
+1. Document must begin with XML declaration
+2. Document must have a root element
+3. Opening tags must have matching ending tags
+4. Single tags, which do not have ending tags, must be closed properly
+5. Element nesting matters and it is must
+6. Element attributes must be quoted. 
+    Correct: <person id="quoted-value"></person>
+    Incorrect: <person id=non-quoted-value></person>
+
+7. You must use entities for special characters
+    i.e.: 
+    Incorrect: <    >   &   etc...
+    Correct: &lt;   &gt;    &amp;      etc...
+
+
+But, having well-formed document,
+Still can occures error
+i.e.: 
+ERRORS of Data Validity:
+- Datatypes
+- Range
+
+etc...
+
+#To solve these level/kind of error, XML Application uses Schemas
+#XSD has easy syntax if you know XML as compare to DTD
+#Because, DTD has totally different syntax then XML
+#Whereas XML Schemas syntax is easy to learn
+#Added advantages: 
+    - XML Schema can be parsed easily using XML Parser
+    - Using XSLT, XML Schema can be styled
+    - one or more XSD files/references can be include in XML file
+       Which is not possible for DTD.
+
+
+Syntax:
+<schema xmlns:whatever="URL/URI">
+    here...
+</schema>
+
+Official URL for Schema namespace: 
+- http://www.w3.org/2001/XMLSchema, 
+
+Above official URL is related to XML Schema namespace
+
+All the elements, datatypes & attributes are available 
+from above mentioned namespace with official site URL in the schema
+
+
+#Some attributes on Schema root
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"    <- Official namespace
+    targetnamespace="http://localhost:8000/xml-xsd"         <- Target namespace on browser to handle XML elements
+    xmlns="http://localhost:8000/xml-xsd"                   <- Default namespace
+    elementFormDefault="qualified"                          <- official namespace (XML Instances) qualifier
+>
+    
+</xsd:schema>
+
+
+#Note:
+- XML Instances = your XML document structure/elements
+- All the XML Instances are defined on XMLSchema by default
+- Which xmlns:xsd namespace be qualified by elementFormDefault attribute
+
+
+__________________________________________
+#XMLSchema Elements Types:
+
+- Simple Type
+    <name>Yubaraj</name>
+
+    Note: plain text, without attribute, purely xml as above
+
+- Complex Type
+    1. Empty Element:
+        <name id="25" />
+
+    2. Element containing attributes
+        <name id="25">Yubaraj</name>
+
+    3. Element containing other elements and attributes
+        <person>                    <- Complex Type
+            <name>Yubaraj</name>    <- Simple Type
+        </person>
+
+        OR
+
+        <person id="14">            <- with attribute
+            <name>Yubaraj</name>
+        </person>
+
+    4. Element containing other elements, attributes and text
+        <person>                    <- Complex Type
+            My name is:             <- Text
+            <name>Yubaraj</name>    <- Simple Type
+        </person>
+
+        OR
+
+        <person any-attribute="value">
+            My name is:
+            <name>Yubaraj</name>
+        </person>
+
+
+https://www.freeformatter.com/xml-formatter.html
+https://www.liquid-technologies.com/online-xsd-validator
+
+https://youtu.be/1BjmZHRHDv0
+
+XPath:
+https://www.easycodeforall.com/generate-xpath.html
+-->

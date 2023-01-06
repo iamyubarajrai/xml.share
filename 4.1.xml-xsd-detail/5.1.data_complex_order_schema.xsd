@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Defining curresponding Schema definition -->
+    <xsd:element name="person">
+        <!-- Defining person element type with mixed-content, (default: mixed="false") -->
+        <xsd:complexType mixed="true">
+            <!--Indicator Types:
+                - Order Indicators
+                - Occurance Indicators
+                - Group Indicators
+                
+                Order: sequence, all, choice
+                Choice: (like a radio button in HTML)
+                i.e.: Firstname or Lastname from XML to XSD
+            -->
+            <xsd:choice>
+                <xsd:element name="firstname" />
+                <xsd:element name="lastname" />
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

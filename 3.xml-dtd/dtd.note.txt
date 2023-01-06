@@ -1,0 +1,104 @@
+DTD
+
+DTD Declaration Types:
+    - Internal, External (Private/Public)
+    Source: https://xmlwriter.net/xml_guide/doctype_declaration.shtml
+    
+- DTD Introduction
+    It is control variable for XML
+- DTD Building Blocks
+    <!DOCTYPE root [ elements... ]>
+- DTD Elements
+    <!ELEMENT ele_name (data_type)>
+- DTD Attributes
+    <!ATTLIST attr_name data_type "attr_value">
+    
+    Attribute Option Types:
+    #REQUIRED, #IMPLIED, #FIXED
+    
+    <!ATTLIST name id CDATA #FIXED "idvalue">
+    <!ATTLIST name id CDATA #REQUIRED>
+    <!ATTLIST name id CDATA #IMPLIED>
+
+- DTD Elements vs Attributes
+
+- DTD Entities
+    <!ENTITY entity_name    "entity_value">
+    ---------------------------
+    #1. Built-in entities
+        &amp;	&gt;	&lt;	&apos;	&quot;
+
+    #2 Character entities
+        <!ENTITY copyright “&#169;”>
+
+    #3 General entities
+        <!ENTITY comp_name “Padmashree International College”>
+
+    #4 Parameter entities
+        <!ELEMENT residence(name, street, pin code, city, phone)>
+        <!ELEMENT apartment(name, street, pin code, city, phone)>
+        <!ELEMENT shop(name, street, pin code, city, phone)>
+
+        <!ENTITY area “name, street, pin code, city, phone”>
+        <!ELEMENT residence (%area;)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://youtu.be/RRaAUuZngZQ
+
+Channel:
+https://www.youtube.com/watch?v=NBCoLBVqm7A&list=PL0yiR-15Ytq85xzGbq409mN2CrBo6qW1I
+
+https://www.youtube.com/watch?v=NBCoLBVqm7A&list=PL0yiR-15Ytq85xzGbq409mN2CrBo6qW1I&index=1
+

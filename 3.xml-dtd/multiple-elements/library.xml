@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Standalone=yes, if dtd as internal -->
+<!DOCTYPE library SYSTEM "library.dtd">
+<library>
+    <Issued to="Faculty">
+        <Bkid>C001</Bkid>
+        <Date>05/05/2020</Date>
+        <Details>
+            <name>Yubaraj Rai</name>
+            <id>F001</id>
+        </Details>
+    </Issued>
+    <Issued to="Student">
+        <Bkid>WT001</Bkid>
+        <Date>06/05/2020</Date>
+        <Details>
+            <name>Sangam Rai</name>
+            <id>S001</id>
+        </Details>
+    </Issued>
+</library>

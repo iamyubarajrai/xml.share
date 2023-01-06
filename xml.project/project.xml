@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<contactInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <record>
+        <name age="32">Yubaraj Rai</name>
+        <address>KTM</address>
+        <deptID>1</deptID>
+        <qtySold>100</qtySold>
+    </record>
+    <record>
+        <name age="30">Sangam Rai</name>
+        <address>BRT</address>
+        <deptID>2</deptID>
+        <qtySold>10</qtySold>
+    </record>
+</contactInfo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="person">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <!--Using Occurance Indicator
+                    - maxOccurs / minOccurs
+                    - values: bounded/unbounded
+                    - bounded: numbers (0, 1, 2...)
+
+                    *Note: Occurance is not allowed on root element
+                -->
+                <xsd:element name="firstname" />
+                <xsd:element name="lastname" />
+                <!-- <xsd:element name="email" minOccurs="0" /> -->
+                <xsd:element name="email" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

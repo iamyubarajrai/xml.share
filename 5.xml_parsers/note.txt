@@ -1,0 +1,19 @@
+DOM is a Programming Interface or an API,
+This API can be used with any Programming Language
+Mostly used with JavaScript
+
+
+D               O                   M
+document        Object              Model
+File            Tags element        Layout structure
+
+DOM Represents the content of XML or HTML document as tree structure.
+Using DOM, we can easily read, access, and update the content of the document.
+
+Resources:
+- https://codebeautify.org/xmlviewer/
+- https://codebeautify.org/jsonviewer
+
+
+
+

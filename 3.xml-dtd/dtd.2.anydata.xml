@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person [
+    <!ELEMENT person ANY>
+    
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT mobile (#PCDATA)>
+    <!ELEMENT telephone (#PCDATA)>
+]>
+<person>
+    <name>Yubaraj Rai</name>
+    <email>yubaraj.name@gmail.com</email>
+    <telephone>+977 9852079777</telephone>
+</person>

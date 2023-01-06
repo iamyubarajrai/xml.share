@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    To solve collision, using XML Namespace
+    i.e.: Naming conflicts
+
+    10th Grade Section A                            10th Grade Section B
+    ____________________                            ____________________
+    James                                           James
+    John                                            Rodger
+    Fedrick                                         Fedrick
+    ...
+-->
+<persondata>
+    <user id="1" xmlns:data1st="http://data.com/data1st">
+        <data1st:fname>James</data1st:fname>
+        <data1st:lname>Born</data1st:lname>
+        <data1st:email>james@gmail.com</data1st:email>
+    </user>
+    <user id="2" xmlns:data1st="http://data.com/data1st">
+        <data1st:fname>John</data1st:fname>
+        <data1st:lname>Smith</data1st:lname>
+        <data1st:email>john@gmail.com</data1st:email>
+    </user>
+    <user id="3" xmlns:data2nd="http://data.com/data2nd">
+        <data2nd:fname>Rodger</data2nd:fname>
+        <data2nd:lname>Harper</data2nd:lname>
+        <data2nd:email>rodger@gmail.com</data2nd:email>
+    </user>
+    <user id="4" xmlns:data2nd="http://data.com/data2nd">
+        <data2nd:fname>Fedrick</data2nd:fname>
+        <data2nd:lname>Kite</data2nd:lname>
+        <data2nd:email>fedrick@gmail.com</data2nd:email>
+    </user>
+</persondata>

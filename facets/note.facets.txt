@@ -1,0 +1,173 @@
+XSD Restrictions/Facets
+(Web Data Management)
+
+Source: https://youtu.be/VxrN_NrOlJc
+
+======================================================
+
+Restriction Cases:
+------------------
+
+#1 Restriction on Values
+
+<xs:element name="age">
+    <xs:simpleType>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="120" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+-------------------------------------------------------
+
+#2 Restriction on Set of Values
+
+<xs:element name="car">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Audi" />
+            <xs:enumeration value="Gulf" />
+            <xs:enumeration value="BMW" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+-------------------------------------------------------
+
+#3 Restriction on Series of Values
+
+Example 1:
+<xs:element name="letter">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+----------
+Example 2:
+<xs:element name="initals">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][A-Z][A-Z]" />
+            #This means, three uppercase letter from A-Z
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+OR,
+The next example also defines an element called "initials" with a restriction. 
+The only acceptable value is THREE of the LOWERCASE OR UPPERCASE letters from a to z:
+
+<xs:element name="initials">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z][a-zA-Z][a-zA-Z]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+----------
+Example 3:
+
+The acceptable value is zero or more occurrences of lowercase letters from a to z:
+
+<xs:element name="letter">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-z])*" />
+            #Acceptable value is One or more occurrences of lowercase letter from a-z
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+OR, 
+
+The acceptable value is one or more pairs of letters, 
+each pair consisting of a lower case letter followed by an upper case letter. 
+For example, "sToP" will be validated by this pattern, but not "Stop" or "STOP" or "stop":
+
+<xs:element name="letter">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([a-z][A-Z])+"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+--------------
+
+<xs:element name="gender">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="male|female" />
+            #Only Acceptable value is male or female
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+-------------------------------------------------------
+
+#4 Restriction on Whitespace Characters
+
+<xs:element name="address">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            #Types: preserve, replace, collapse
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+-------------------------------------------------------
+
+#5 Restriction on Length
+(length, minLength, maxLength)
+
+<xs:element name="password">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:length value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+OR,
+
+<xs:element name="password">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5" />
+            <xs:maxLength value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+OR,
+There must be exactly eight characters in a row and 
+those characters must be lowercase or uppercase letters from a to z, or a number from 0 to 9:
+
+<xs:element name="password">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9]{8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+======================================================
+Restrictions for Datatypes
+
+Constraint:
+- enumeration
+- fractionDigits
+- length
+- maxExclusive
+- maxInclusive
+- maxLength
+- minExclusive
+- minInclusive
+- minLength
+- pattern
+- totalDigits
+- whiteSpace
+

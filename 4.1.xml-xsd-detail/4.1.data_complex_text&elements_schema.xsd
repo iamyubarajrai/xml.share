@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Defining curresponding Schema definition -->
+    <xsd:element name="person">
+        <!-- Defining person element type with mixed-content, (default: mixed="false") -->
+        <xsd:complexType mixed="true">
+            <!-- Ignoring sequence, any order acceptance -->
+            <xsd:all>
+                <xsd:element name="email" />
+                <xsd:element name="firstname" />
+                <xsd:element name="lastname" />
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

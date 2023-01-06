@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Referencing stylesheet -->
+<?xml-stylesheet type="text/xsl" href="4.0.style.loop.xsl"?>
+<!--
+    XSLT: XML Stylesheet Markup Language 
+    XML to required_structure tranformation
+    i.e.: XML->nextXML, XML->HTML, XML->XHTML 
+ -->
+<personData>
+    <user id="1">
+        <fname>James</fname>
+        <lname>Born</lname>
+        <email>james@gmail.com</email>
+    </user>
+    <user id="2">
+        <fname>John</fname>
+        <lname>Smith</lname>
+        <email>john@gmail.com</email>
+    </user>
+    <user id="3">
+        <fname>Rodger</fname>
+        <lname>Harper</lname>
+        <email>rodger@gmail.com</email>
+    </user>
+    <user id="4">
+        <fname>Fedrick</fname>
+        <lname>Kite</lname>
+        <email>fedrick@gmail.com</email>
+    </user>
+</personData>

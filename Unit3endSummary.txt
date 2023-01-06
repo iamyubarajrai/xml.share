@@ -1,0 +1,20 @@
+@all
+
+
+Unit 3, Major Summary:
+______________________
+
+XML     =   Document                        = Document to Store and Share Content.
+XSL(T)  =   transformation                  = To transform XML document to other language structure.
+DTD     =   Type Definition                 = To define documet content parsability/types/status.
+XSD     =   Data Type Validation            = To validate DataTypes of XML Element considering values.
+Parser  =   Content Manipulator             = To manipulate content from XML document.
+Facets  =   DataType Constraint Spefier     = Enable you to specify constraints on a data type.
+XQuery  =   Query on XML structure          = A language that can query structured or semi-structured XML data. 
+                                              With the xml data type support provided in the Database Engine, 
+                                              documents can be stored in a database and then queried by using XQuery.
+
+
+
+
+

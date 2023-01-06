@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Group Indicator, Re-Usable Content -->
+    <xsd:group name="info">
+        <xsd:sequence>
+            <xsd:element name="firstname" />
+            <xsd:element name="lastname" />
+            <xsd:element name="email" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:element name="person">
+        <xsd:complexType mixed="true">
+            <!-- Referencing Group -->
+            <xsd:group ref="info" />
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

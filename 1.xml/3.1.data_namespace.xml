@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persondata
+    xmlns:data1st="http://data.com/data1st"
+    xmlns:data2nd="http://data.com/data2nd"
+>
+    <data1st:user id="1">
+        <data1st:fname>James</data1st:fname>
+        <data1st:lname>Born</data1st:lname>
+        <data1st:email>james@gmail.com</data1st:email>
+    </data1st:user>
+    <data1st:user id="2">
+        <data1st:fname>John</data1st:fname>
+        <data1st:lname>Smith</data1st:lname>
+        <data1st:email>john@gmail.com</data1st:email>
+    </data1st:user>
+    <data2nd:user id="3">
+        <data2nd:fname>Rodger</data2nd:fname>
+        <data2nd:lname>Harper</data2nd:lname>
+        <data2nd:email>rodger@gmail.com</data2nd:email>
+    </data2nd:user>
+    <data2nd:user id="4">
+        <data2nd:fname>Fedrick</data2nd:fname>
+        <data2nd:lname>Kite</data2nd:lname>
+        <data2nd:email>fedrick@gmail.com</data2nd:email>
+    </data2nd:user>
+</persondata>

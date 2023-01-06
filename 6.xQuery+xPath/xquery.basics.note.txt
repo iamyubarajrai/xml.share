@@ -1,0 +1,194 @@
+https://xmlbeans.apache.org/guide/XPathXQuery.html
+
+https://easycodeforall.com/generate-xpath.html
+
+
+=============================================
+#What is XQuery?
+
+XQuery is a functional language that is used to retrieve information stored in XML format. 
+XQuery can be used on XML documents, relational databases containing data in XML formats, or XML Databases. 
+XQuery 3.0 is a W3C recommendation from April 8, 2014.
+
+The definition of XQuery as given by its official documentation is as follows −
+
+XQuery is a standardized language for combining documents, databases, Web pages and almost anything else. 
+It is very widely implemented. It is powerful and easy to learn. 
+XQuery is replacing proprietary middleware languages and Web Application development languages. 
+XQuery is replacing complex Java or C++ programs with a few lines of code. 
+XQuery is simpler to work with and easier to maintain than many other alternatives.
+
+#Characteristics
+- Functional Language − XQuery is a language to retrieve/querying XML based data.
+- Analogous to SQL − XQuery is to XML what SQL is to databases.
+- XPath based − XQuery uses XPath expressions to navigate through XML documents.
+- Universally accepted − XQuery is supported by all major databases.
+- W3C Standard − XQuery is a W3C standard.
+
+
+#Benefits of XQuery
+- Using XQuery, both hierarchical and tabular data can be retrieved.
+- XQuery can be used to query tree and graphical structures.
+- XQuery can be directly used to query webpages.
+- XQuery can be directly used to build webpages.
+- XQuery can be used to transform xml documents.
+- XQuery is ideal for XML-based databases and object-based databases. 
+  Object databases are much more flexible and powerful than purely tabular databases.
+
+
+#1 XQuery Fundamentals
+
+- XQuery is a general purpose query language for XML data.
+- XQuery can be used on XML documents, 
+  relational databases containing data in XML formats, or XML Databases.
+- Currently being standardized by the World Wide Web Consortium (W3C)
+        - The textbook description is based on a January 2005 draft of the standard.
+          The final version may differ, but major features likely to stay unchanged.
+- XQuery is derived from the Quilt Query Language, which itself borrows from SQL, XQL and XML-QL.
+- XQuery uses (FLWOR format/order):   
+        - for ... let ... where ... order by ... return(result) ...
+        - Syntax:
+                for         -> SQL from
+                where       -> SQL where
+                order by    -> SQL order by
+                return      -> SQL select
+                let         -> allows temporary variables, and has no equivalent in SQL.
+- For clause uses XPath expressions, and variable in for clauses ranges over values in the set returned by XPath.
+- Simple FLWOR expression in XQuery
+        - find all courses with credits > 3, with each result enclosed in an <course_id> ... </course_id> tag.
+
+        for $x in /university-3/course
+        let $courseId := $x/@couse_id
+        where $x/credits > 3
+        return <course_id> { $courseId } </course_id>
+
+        - Items in the return clause are XML text unless  enclosed in {}, in which case they are evaluated.
+
+- Let clause not really needed in this query, and selection can be done in XPath. Query can be written as:
+        for $x in /university-3/course[credits > 3]
+        return <course_id> { $x/@course_id } </course_id>
+
+- Alternative notation for constructing elements:
+        return element course_id { element $x/@course_id }
+
+
+
+=============================================
+#2 XQuery Joins
+______________________
+
+- Joins are specified in a manner very similar to SQL
+        for $c in /university/course,
+            $i in /university/instructor,
+            $t in /university/teaches
+        where $c/course_id=$t/course_id and $t/IID = $i/IID
+        return <course_instructor> { $c $i } </course_instructor>
+
+    *Note: IID = Instructor ID
+
+- The same query can be expressed with the selections as XPath selections.
+        for $c in /university/course
+            $i in /university/instructor,
+            $t in /university/teaches[$c/course_id=$t/course_id and $t/IID = $i/IID]
+        return <course_instructor> { $c $i } </course_instructor>
+
+
+=============================================
+#3 XQuery Nested Queries
+______________________
+
+- The following query converts data from the flat structure for university information into the nested structure used in university-1
+
+        <university-1>
+            { for $d in /university/department
+                return <department>
+                        { $d/* }
+                        { for $c in /university/course[dept_name = $d/dept_name] 
+                            return $c
+                        }
+                    </department>
+            }
+            { for $i in /university/instructor
+                return <instructor>
+                        { $i/* }
+                        { for $c in /university/teaches[IID = $i/IID]
+                            return $c/course_id
+                        }
+                    </instructor>
+            }
+        </university-1>
+
+- $c/* denotes all the children of the node to which $c is bound, 
+  without the enclosing top-level tag.
+
+
+=============================================
+#4 XQuery Grouping and Aggregation
+______________________
+
+- Nested queries are used for grouping
+
+        for $d in /university/department            
+        return
+            <department-total-salary>
+                <dept_name> { $d/dept_name } </dept_name>
+                <total_salary>
+                    { fn:sum (
+                        for $i in /university/instructor[dept_name = $d/dept_name]
+                        return $i/salary
+                    )}
+                </total_salary>
+            </department-total-salary>
+
+
+=============================================
+#5 XQuery - Sorting
+______________________
+
+- The "order by" clause can be used at the end of any expression.
+  Eg: to return instructor sorted by name
+
+            for $i in /university/instructor
+            order by $i/name
+            return <instructor> { $i/* } </instructor>
+
+- Use "order by $i/name descending" to sort in descending order
+- Can sort at multiple levels of nesting (sort departments by dept_name, 
+  and by courses sorted to course_id within each department)
+
+        <university-1>
+            {
+                for $d in /university/department
+                order by $d/dept_name
+                return 
+                    <department>
+                        { $d/* }
+                        {
+                            for $c in /university/course[dept_name  = $d/dept_name]
+                            order by $c/course_id
+                            return <course> { $c/* } </course>
+                        }
+                    </department>
+            }
+        </university-1>
+
+
+=============================================
+#6 XQuery - Functions and Other features
+______________________
+
+- User defined functions with the type system of XMLSchema
+
+    declare function local:dept_courses($iid as xs:string)
+        as element(course)*
+    {
+        for $i in /university/instructor[IID = $iid],
+            $c in /university/courses[dept_name = $i/dept_name]
+        return $c
+    }
+
+- Types are optional for function parameters and return values
+- The * (as in decimal*) indecates a sequence of values of that type
+- Universal and existential quantification in where clause property
+            The universal quantifier, meaning "for all", "for every", "for each", etc. 
+            The existential quantifier, meaning "for some", "there exists", "there is one", etc.

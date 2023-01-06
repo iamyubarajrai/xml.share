@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Empty Type Element, attributes on firstname element -->
+<firstname xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    i:schemaLocation="http://localhost:8000/xml-xsd data_schema.xsd"
+    rollnumber="225" />
+<!-- 
+    XML:
+    <firstname xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    i:schemaLocation="http://localhost:8000/xml-xsd data_schema.xsd"
+    rollnumber="225"
+    ></firstname>
+
+    Output case:
+    <firstname rollnumber="225"></firstname>
+    
+    Which is not matched with any type of element,
+    So, It throws error
+    It should match type of element strictly
+    i.e.: Complex Empty type: <firstname rollnumber="225" />
+
+    So, use self enclosing tag:
+    <firstname xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    i:schemaLocation="http://localhost:8000/xml-xsd data_schema.xsd"
+    rollnumber="225" />
+ -->

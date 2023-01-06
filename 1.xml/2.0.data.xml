@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persondata> <!-- root element / main container -->
+    <user>
+        <fname>James</fname>
+        <lname>Born</lname>
+        <email>james@gmail.com</email>
+    </user>
+</persondata>

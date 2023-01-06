@@ -1,0 +1,9 @@
+XSD:
+-   Restrictions on a set of values
+    example:
+        - allowed values for deptID are 1, 2 or 3 only
+        OR,
+        - allowed values for deptID are ITD, FD or AD only
+
+- Restrictions on th 
+    - value of an element and its attribute value

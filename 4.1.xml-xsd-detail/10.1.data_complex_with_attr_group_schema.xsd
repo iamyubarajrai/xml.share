@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:attributeGroup name="personAttributes">
+        <xsd:attribute name="firstname" type="xsd:string" />
+        <xsd:attribute name="lastname" type="xsd:string" />
+    </xsd:attributeGroup>
+    <xsd:element name="persons">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="person" maxOccurs="unbounded">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="email" type="xsd:string" />
+                        </xsd:sequence>
+
+                        <!-- Refering group -->
+                        <xsd:attributeGroup ref="personAttributes" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

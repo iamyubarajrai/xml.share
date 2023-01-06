@@ -1,0 +1,23 @@
+Introduction to XML
+Extensible Markup Language
+
+<?xml ?>
+
+XML: Extensible Markup Language
+- XML is used to exchange data or structure data
+- XML uses user defined tags. XML does not have predefined tags
+- XML tags are case sensitive
+- XML tags must be closed otherwise you will get an error
+- XML is a strict Language
+- XML file must have .xml extension
+- XML tags name shouldn't have hypen, it should be written in single word
+
+
+HTML: Hypertext Markup Language
+- HTML is used to structure a webpage
+- HTML tags are predefined
+- HTML tags are case insensitive
+- HTML tags should also be closed but browser won't mind if you forgot to close any tag. 
+- HTML is not a strict Language
+- HTML file must have .htm or .html extension
+

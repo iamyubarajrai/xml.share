@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR (XML HTTP Request)</title>
+</head>
+<body>
+    <!-- XHR
+         https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+    -->
+    <!-- CORS
+         https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+    -->
+    <div id="data"></div>
+    <script crossorigin="anonymous">
+        /** 
+         * ===========================================================
+         * #1 readyState cycle
+         * ===========================================================
+        */ 
+        const xhr = new XMLHttpRequest();
+        console.log('UNSENT', xhr.readyState); // readyState will be 0
+
+        xhr.open('GET', '/api', true);
+        console.log('OPENED', xhr.readyState); // readyState will be 1
+        
+        xhr.onprogress = () => {
+            console.log('LOADING', xhr.readyState); // readyState will be 3
+        };
+        
+        xhr.onload = () => {
+            console.log('DONE', xhr.readyState); // readyState will be 4
+        };
+        
+        xhr.send(null);
+
+
+
+
+        /** 
+         * ===========================================================
+         * #2 CORS issue
+         * ===========================================================
+        */
+
+        var xhr_api = new XMLHttpRequest();
+        xhr_api.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                document.getElementById('data').innerText = xhr_api.responseText;
+            }
+        };
+
+        xhr_api.open("GET", "https://gorest.co.in/public/v2/users", true); //CORS enabled
+        // xhr_api.open("GET", "https://yubarajrai.name.np", true); //no CORS enabled
+        xhr_api.send();
+
+        xhr_api.onload = function() {
+            console.log(xhr_api.responseText);
+        };
+    </script>
+</body>
+</html>

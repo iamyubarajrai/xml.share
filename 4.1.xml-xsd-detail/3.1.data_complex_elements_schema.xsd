@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Defining curresponding Schema definition -->
+    <xsd:element name="person">
+        <!-- Defining person element type -->
+        <xsd:complexType>
+            <!--Using optional sequence indicator
+                Which checks the element sequence is mathced or not on XML and XSD  
+            -->
+            <xsd:sequence>
+                <!-- Defining Elements -->
+                <xsd:element name="firstname" />
+                <xsd:element name="lastname" />
+                <xsd:element name="email" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

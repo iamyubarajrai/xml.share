@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple Type Element, no attributes on firstname element -->
+<firstname xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    i:schemaLocation="http://localhost:8000/xml-xsd data_schema.xsd"
+>
+    Yubaraj
+</firstname>

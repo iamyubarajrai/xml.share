@@ -1,0 +1,6 @@
+XSD Data Types:
+- String
+- Date/Time
+- Numeric
+- Misc
+- Reference
